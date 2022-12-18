@@ -11,12 +11,10 @@
 </head>
 
 <body>
-   <h1 id="project-description">Project description</h1>
+  <h1 id="project-description">Project description</h1>
 <p>We have provided a viual proposal, a ptyhon game that responds to classified colors.
 The different spheres move when they are detected.
 The Nano Ble is completely wireless at work thanks to the bluethood module.</p>
-<h2 id="color-detection">color detection</h2>
-<p>We first read ur RGB values. Every iteration of values we get, we place them in an txt file and we change it to an csv file. It splits then the data in an training amount(60) en an test amount(40). We are using One Hot encoding, because we have multiple classes.</p>
 <h2 id="before-we-can-start-we-need-the-necessary-libraries">Before we can start, we need the necessary libraries.</h2>
 <p>Let&#39;s start first to be able to build the code on our nano BLE 33.</p>
 <p>We need the Arduino Mbed Nano Board version 3.3 and Deprecated Arduino mbed os Boards.
@@ -28,6 +26,8 @@ conda activate ColorDetection</p>
 <p>pip install pysondb
 pip install pygame
 pip install bleak</p>
+<h2 id="color-detection">color detection</h2>
+<p>We first read ur RGB values. Every iteration of values we get, we place them in an txt file and we change it to an csv file. It splits then the data in an training amount(60) en an test amount(40). We are using One Hot encoding, because we have multiple classes.</p>
 <pre><code class="language-cpp">/*
   Object color sampler
   --------------------
@@ -853,7 +853,9 @@ or right(green). We can also shoot with the colour red.</p>
         #Shoot 
         if(red_j == [{&#39;name&#39;: &#39;rood&#39;, &#39;type&#39;: &#39;1&#39;, &#39;id&#39;:  257455674840657643}] and self.ready ):
             self.shoot_laser()
+            
             self.ready = False
+            
             self.laser_time = pygame.time.get_ticks()
             self.laser_sound.play()
 
@@ -875,7 +877,6 @@ or right(green). We can also shoot with the colour red.</p>
 <p><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html</a></p>
 <p><a href="https://pypi.org/project/bleak/">https://pypi.org/project/bleak/</a></p>
 <p><a href="https://www.geeksforgeeks.org/how-to-install-pygame-in-windows/">https://www.geeksforgeeks.org/how-to-install-pygame-in-windows/</a></p>
-
 
 
 </body>
